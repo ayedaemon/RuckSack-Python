@@ -1,6 +1,7 @@
 # python-tools
 
-My collection of Python tools.
+### **__ My collection of Python tools. __**
 
-
-1. Suduko-solver (Solves suduko questions and gives you the complete answer)
+ + Suduko-solver (Solves suduko questions and gives you the complete answer)
+ + Python Notepad (Simple text editor implimentted in python)
+ + color_switch (python implimentation of color switch game)
