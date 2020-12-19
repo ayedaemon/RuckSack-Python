@@ -1,3 +1,14 @@
+### med2md ###
+med2md/converted_posts/posts/*.md
+med2md/posts/*.html
+## Exceptions
+!med2md/converted_posts/posts/Bare-double-dash-in-commands.md
+!med2md/posts/2019-01-22_Bare-double-dash-in-commands-a3685c9a6403.html
+
+
+
+
+#### GENERAL ####
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

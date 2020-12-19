@@ -7,3 +7,4 @@
  + color_switch (python implimentation of color switch game)
  + geotaging_extractor (extract location from images metadata and put the marker in the map)
  + Mail automation (send HTML template mail to multiple people - Tkinter)
+ + med2md (convert medium posts to markdown)

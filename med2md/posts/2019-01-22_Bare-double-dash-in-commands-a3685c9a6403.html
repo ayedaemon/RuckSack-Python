@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Bare double dash in commands</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Bare double dash in commands</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+We usually have to use commands for performing various tasks in our daily life as a programmer. Usually every commands have some arguments…
+</section>
+<section data-field="body" class="e-content">
+<section name="63e6" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="9958" id="9958" class="graf graf--h3 graf--leading graf--title">Bare double dash in commands</h3><p name="7b82" id="7b82" class="graf graf--p graf-after--h3">We usually have to use commands for performing various tasks in our daily life as a programmer. Usually every commands have some arguments or flags.</p><figure name="2e00" id="2e00" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="0*2nzH2_6m7y8HR6kZ" data-width="392" data-height="128" src="https://cdn-images-1.medium.com/max/800/0*2nzH2_6m7y8HR6kZ"></figure><p name="9dfc" id="9dfc" class="graf graf--p graf-after--figure">A single hyphen can be followed by multiple single-character flags. A double hyphen prefixes a single, multicharacter option.</p><p name="827f" id="827f" class="graf graf--p graf-after--p">Consider this example:</p><pre name="8937" id="8937" class="graf graf--pre graf-after--p"><code class="markup--code markup--pre-code">tar -czf</code></pre><p name="f386" id="f386" class="graf graf--p graf-after--pre">In this example, <code class="markup--code markup--p-code">-czf</code> specifies three single-character flags: <code class="markup--code markup--p-code">c</code>, <code class="markup--code markup--p-code">z</code>, and <code class="markup--code markup--p-code">f</code>. So <code class="markup--code markup--p-code">-c -z -f</code> is same as <code class="markup--code markup--p-code">-czf</code> .</p><p name="58ee" id="58ee" class="graf graf--p graf-after--p">Now consider another example:</p><pre name="a666" id="a666" class="graf graf--pre graf-after--p"><code class="markup--code markup--pre-code">tar --exclude</code></pre><p name="2566" id="2566" class="graf graf--p graf-after--pre">In this case, <code class="markup--code markup--p-code">--exclude</code> specifies a single, multicharacter option named <code class="markup--code markup--p-code">exclude</code>. The double hyphen disambiguates the command-line argument, ensuring that <code class="markup--code markup--p-code">tar</code> interprets it as <code class="markup--code markup--p-code">exclude</code> rather than a combination of <code class="markup--code markup--p-code">e</code>, <code class="markup--code markup--p-code">x</code>, <code class="markup--code markup--p-code">c</code>, <code class="markup--code markup--p-code">l</code>, <code class="markup--code markup--p-code">u</code>, <code class="markup--code markup--p-code">d</code>, and <code class="markup--code markup--p-code">e</code>.</p><h3 name="6eb8" id="6eb8" class="graf graf--h3 graf-after--p">But what about bare double dashes??</h3><p name="b01d" id="b01d" class="graf graf--p graf-after--h3">It is actually part of the POSIX standard that — can be used to separate options from other arguments, so you will see it on commands like cp and mv (which are not part of Bash).</p><p name="57a0" id="57a0" class="graf graf--p graf-after--p">The double dash “–” means end of command line flags i.e. it tells the preceding command not to try to parse what comes after command line options.</p><p name="972e" id="972e" class="graf graf--p graf-after--p">If you want to grep a file for the string -v ; normally -v would be considered as the option to reverse the matching meaning (only show lines that do not match), but with — you can grep for string -v like this:</p><pre name="2531" id="2531" class="graf graf--pre graf-after--p"><code class="markup--code markup--pre-code">grep -- -v file</code></pre><p name="b122" id="b122" class="graf graf--p graf-after--pre graf--trailing">A double dash ( — ) is used in bash built-in commands and there are more other commands to signify the end of command options, after which only positional parameters are accepted.</p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@ayedaemon" class="p-author h-card">Rishabh Umrao</a> on <a href="https://medium.com/p/a3685c9a6403"><time class="dt-published" datetime="2019-01-22T08:57:11.372Z">January 22, 2019</time></a>.</p><p><a href="https://medium.com/@ayedaemon/bare-double-dash-in-commands-a3685c9a6403" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on December 19, 2020.</p></footer></article></body></html>
