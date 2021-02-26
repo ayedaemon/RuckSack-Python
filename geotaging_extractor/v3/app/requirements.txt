@@ -1,6 +1,0 @@
-folium
-fastapi
-uvicorn
-pillow
-python-multipart
-aiofiles
